@@ -1,0 +1,73 @@
+---
+title: "Final Project"
+author: "parsa"
+date: "2024-08-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+
+library(dplyr)
+# Load the RData file
+load("C:/Dortmund/Summer24/Counting method/Final Report/final_project_8.RData")
+
+# Assuming the dataset is stored in a data frame called 'your_data_frame'
+# Replace 'your_data_frame' with the actual name of the data frame in the RData file
+
+# Display the dataset
+#print(data)
+
+# Assuming the dataset is named `dataset`, replace `dataset` with your actual dataset name
+# Write the dataset to a CSV file
+write.csv(data, "dataset.csv", row.names = FALSE)
+
+```
+
+
+```{r EX1}
+
+
+
+
+# Ensure the data is loaded correctly
+str(data)
+
+# Convert status to a binary event indicator (1 = event, 0 = censored)
+id <- data$id
+days <- data$days
+status <- data$status
+manufacturer <- data$manufacturer
+warranty <- data$warranty
+
+
+#print(id)
+#print(days)
+print(status)
+#print(manufacturer)
+#print(warranty)
+
+```
+
+
+```{r cars}
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
